@@ -4,7 +4,7 @@ import pytest
 
 @pytest.fixture
 def setup():
-    print("setup browser..")
+    print("Setup browser..")
 
 def test_one(setup):
     print("This is my test one")
