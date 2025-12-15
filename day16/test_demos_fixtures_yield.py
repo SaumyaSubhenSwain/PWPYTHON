@@ -17,3 +17,6 @@ def test_two(setup):
 def test_three(setup):
     print("this is my test three")
 
+def test_four(setup):
+    print("this is my test four")
+
