@@ -29,3 +29,4 @@ def test_signupbyfacebook():
 def test_signupbyphone():
     print("This is signup by phone test")
     assert True == True
+
