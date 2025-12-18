@@ -11,5 +11,4 @@ from playwright.sync_api import Page
 
 def test_verify_css_locators(page:Page):
     page.goto("https://demowebshop.tricentis.com/")
-    print("dffjkdfkjsd")
     
