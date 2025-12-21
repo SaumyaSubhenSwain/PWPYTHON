@@ -12,3 +12,4 @@ def test_xpath_locators(page:Page):
     # 2. Relative xpath :    //tagname[@attribute='value']
     expect(page.locator("//img[@alt='Tricentis Demo Web Shop']")).to_be_visible()
     page.wait_for_timeout(5000)
+    jjhnb
