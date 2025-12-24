@@ -18,3 +18,22 @@ def test_handle_dynamic_elements(page: Page):
     #         button=page.locator("//button[text()='START' or text()='STOP']")
     #         button.click()
     #         page.wait_for_timeout(2000)
+
+    # using css...............
+    # def test_handle_dynamic_elements_css(page: Page):
+    #     page.goto("https://testautomationpractice.blogspot.com/")
+    #
+    #     for i in range(5):
+    #         button=page.locator("button[name^='st']")
+    #         button.click()
+    #         page.wait_for_timeout(2000)
+
+    # using playwright locator...............
+
+def test_handle_dynamic_elements_css(page: Page):
+    page.goto("https://testautomationpractice.blogspot.com/")
+
+    for i in range(5):
+        button=page.get_by_role("button",name=re.compile(r'ST.*'))
+        button.click()
+        page.wait_for_timeout(2000)
