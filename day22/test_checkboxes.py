@@ -1,3 +1,5 @@
+from calendar import weekday
+
 from playwright.sync_api import Page, expect
 
 
@@ -43,5 +45,28 @@ def test_checkbox(page:Page):
         if checkbox.is_checked():
             checkbox.uncheck()
             expect(checkbox).not_to_be_checked()
+        else:
+            checkbox.check()
+            expect(checkbox).to_be_checked()
+
+    page.wait_for_timeout(5000)
+
+    # 6. Randomly check checkboxes - check 1,3 6 checkboxes
+    indexes = [1,3,6]
+
+    for i in indexes:
+        checkboxes[i].check()
+        expect(checkboxes[i]).to_be_checked()
+
+    page.wait_for_timeout(5000)
+
+    # 7. select checkbox based on the label/input value by choice
+    weekday = "Friday"
+
+    for label in days:
+        if label == weekday:
+            checkbox = page.get_by_label(label)
+            checkbox.check()
+            expect(checkbox).to_be_checked()
 
     page.wait_for_timeout(5000)
