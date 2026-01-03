@@ -19,6 +19,7 @@ def test_product_sort_and_print_prices(page):
     price_elements = page.locator("div.val")
     name_elements = page.locator("p.shelf-item__title")
 
+
     prices = price_elements.all_text_contents()
     names = name_elements.all_text_contents()
 
