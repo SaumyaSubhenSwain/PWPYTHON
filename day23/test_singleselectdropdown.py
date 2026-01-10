@@ -8,10 +8,13 @@ def test_single_select_dropdown(page: Page):
     # page.locator("#country").select_option("India")    #by label
     # page.locator("#country").select_option(label= "India")  # by label
 
-    page.locator("#country").select_option("germany")  # by value
+    selected_value= page.locator("#country").input_value()      #capture selected option
+    print("Selected value:", selected_value)
+
+    # page.locator("#country").select_option("germany")  # by value
     # page.locator("#country").select_option(value= "germany")  # by value
 
-    page.locator("#country").select_option(index= 3)  # by index
+    # page.locator("#country").select_option(index= 3)  # by index
 
     # check number of options in dropdown
 
