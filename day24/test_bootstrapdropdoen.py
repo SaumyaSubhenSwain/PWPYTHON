@@ -41,7 +41,9 @@ def test_bootstrapdropdown(page:Page):
     for i in range(count):
         text= options.nth(i).inner_text()
         print("option to be selected====> ", text)
-        if text=="Automation Tester":
+        if text=="Automaton Tester":
             print("Matching success.......")
             options.nth(i).click()
             break
+
+    page.wait_for_timeout(5000)
