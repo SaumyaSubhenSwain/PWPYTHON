@@ -11,7 +11,7 @@ def test_screenshots_demo(page:Page):
 
 
     # Page screenshot (partially/visible)
-    page.screenshot(path=f"screenshots/homepage_{timestamp}.png")
+    # page.screenshot(path=f"screenshots/homepage_{timestamp}.png")
 
     # Full page screenshot
     # page.screenshot(path=f"screenshots/homepage_{timestamp}.png", full_page=True)
