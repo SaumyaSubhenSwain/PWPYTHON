@@ -20,8 +20,14 @@ class HomePage:
                 products.nth(i).click()
                 break
 
-        self.page.on("dialog", lambda dialog: dialog.accept()) # handle dialog
+        # Wait for product page to load
+        # self.page.wait_for_selector('a:has-text("Add to cart")')
+
+        # Click Add to cart
         self.add_to_cart_button.click()
+        # Handle alert popup
+        self.page.on("dialog", lambda dialog: dialog.accept()) # handle dialog
+
 
     def goto_cart(self):
         self.cart_link.click()
